@@ -135,6 +135,7 @@
 
 let player1Choice = ''
 let player2Choice = ''
+let submissionCount = 0
 // let player1Name = 'Player 1'
 // let player2Name = 'Player 2'
 
@@ -163,42 +164,6 @@ function clickRockPlayer2(event) {
     return
   }
   console.log(event.target.value)
-  console.log(event)
-}
-function updatePlayer1Name(event) {
-  const playerName = document.querySelector('.player1 strong.name')
-  playerName.textContent = event.target.value
-  if (playerName.textContent === '') {
-    playerName.textContent = 'Player 1'
-  }
-  console.log(event.target.value)
-  console.log(event)
-}
-
-function updatePlayer2Name(event) {
-  const playerName = document.querySelector('.player2 strong.name')
-  playerName.textContent = event.target.value
-  if (playerName.textContent === '') {
-    playerName.textContent = 'Player 2'
-  }
-  console.log(event.target.value)
-  console.log(event)
-}
-
-function clickResetScoreboard(event) {
-  const player1Name = document.querySelector('.player1 strong.name')
-  const player2Name = document.querySelector('.player2 strong.name')
-  const player1Selection = document.querySelector('.player1 h2.selection')
-  const player2Selection = document.querySelector('.player2 h2.selection')
-  const winner = document.querySelector('h2.intro')
-
-  winner.textContent = 'The winner is...'
-  player1Choice = ''
-  player2Choice = ''
-  player1Selection.textContent = 'Nothing Selected'
-  player2Selection.textContent = 'Nothing Selected'
-  player1Name.textContent = 'Team 1'
-  player2Name.textContent = 'Team 2'
   console.log(event)
 }
 
@@ -261,6 +226,94 @@ function clickScissorsPlayer2(event) {
   }
 }
 
+function updatePlayer1Name(event) {
+  const playerName = document.querySelector('.player1 strong.name')
+  playerName.textContent = event.target.value
+  if (playerName.textContent === '') {
+    playerName.textContent = 'Player 1'
+  }
+  console.log(event.target.value)
+  console.log(event)
+}
+
+function updatePlayer2Name(event) {
+  const playerName = document.querySelector('.player2 strong.name')
+  playerName.textContent = event.target.value
+  if (playerName.textContent === '') {
+    playerName.textContent = 'Player 2'
+  }
+  console.log(event.target.value)
+  console.log(event)
+}
+
+function clickUndoPlayer1(event) {
+  player1Choice = ''
+  let playerSelection = document.querySelector('.player1 h2.selection')
+  playerSelection.textContent = 'Nothing Selected'
+  console.log(event.target.value)
+  console.log(event)
+}
+
+function clickUndoPlayer2(event) {
+  player2Choice = ''
+  let playerSelection = document.querySelector('.player2 h2.selection')
+  playerSelection.textContent = 'Nothing Selected'
+  console.log(event.target.value)
+  console.log(event)
+}
+
+// function clickSubmitPlayer1(event) {
+//   if (player1Choice !== '' && player2Choice !== '') {
+//     const winnerElement = document.querySelector('h2.name')
+//     let winnerName = winner.textContent
+//     if (player1Choice === player2Choice) {
+//       winnerName = 'Draw!'
+//     } else if (
+//       (player1Choice === 'Scissors' && player2Choice === 'Paper') ||
+//       (player1Choice === 'Rock' && player2Choice === 'Scissors') ||
+//       (player1Choice === 'Paper' && player2Choice === 'Rock')
+//     ) {
+//       const player1Name = document.querySelector('.player1 strong.name')
+//       winnerName = player1Name.target.value
+//     } else {
+//       const player2Name = document.querySelector('.player2 strong.name')
+//       winnerName = player2Name.target.value
+//     }
+//   } else {
+//     window.alert('Both players must select a hand before submitting')
+//     return
+//   }
+//   console.log(event.target.value)
+//   console.log(event)
+// }
+
+// function clickSubmitPlayer2(event) {
+//   const playerName = document.querySelector('.player2 strong.name')
+//   playerName.textContent = event.target.value
+//   if (playerName.textContent === '') {
+//     playerName.textContent = 'Player 2'
+//   }
+//   console.log(event.target.value)
+//   console.log(event)
+// }
+
+function clickResetScoreboard(event) {
+  const player1Name = document.querySelector('.player1 strong.name')
+  const player2Name = document.querySelector('.player2 strong.name')
+  const player1Selection = document.querySelector('.player1 h2.selection')
+  const player2Selection = document.querySelector('.player2 h2.selection')
+  const winner = document.querySelector('h2.intro')
+
+  winner.textContent = 'The winner is...'
+  player1Choice = ''
+  player2Choice = ''
+  player1Selection.textContent = 'Nothing Selected'
+  player2Selection.textContent = 'Nothing Selected'
+  player1Name.textContent = 'Team 1'
+  player2Name.textContent = 'Team 2'
+  console.log(event)
+}
+
 function main() {
   document
     .querySelector('input.player1')
@@ -289,18 +342,18 @@ function main() {
   document
     .querySelector('.player2 button.scissors')
     .addEventListener('click', clickScissorsPlayer1)
-  // document
-  //   .querySelector('.player1 button.undo')
-  //   .addEventListener('click', clickUndoPlayer1)
-  // document
-  //   .querySelector('.player2 button.undo')
-  //   .addEventListener('click', clickUndoPlayer2)
-  // document
-  //   .querySelector('.player1 button.submit')
-  //   .addEventListener('click', clickSubmitPlayer1)
-  // document
-  //   .querySelector('.player2 button.submit')
-  //   .addEventListener('click', clickSubmitPlayer2)
+  document
+    .querySelector('.player1 button.undo')
+    .addEventListener('click', clickUndoPlayer1)
+  document
+    .querySelector('.player2 button.undo')
+    .addEventListener('click', clickUndoPlayer2)
+  document
+    .querySelector('.player1 button.submit')
+    .addEventListener('click', clickSubmitPlayer1)
+  document
+    .querySelector('.player2 button.submit')
+    .addEventListener('click', clickSubmitPlayer2)
 }
 
 document.addEventListener('DOMContentLoaded', main)
