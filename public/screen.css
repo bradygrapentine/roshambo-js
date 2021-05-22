@@ -27,15 +27,16 @@ header {
   margin: 0rem 0rem 1rem 0rem;
   background-color: rgba(255, 255, 255, 0.75);
   border-bottom: 2px solid rgb(0, 0, 0);
-  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.3);
 }
 header h1 {
   text-align: center;
   padding: 1rem 0rem 0.8rem 0rem;
+  font-style: italic;
 }
 
 section.display {
-  width: 80%;
+  width: 81%;
   min-height: 5rem;
   background-color: rgba(255, 255, 255, 0.75);
   flex-direction: row;
@@ -45,21 +46,24 @@ section.display {
 
 section button {
   color: rgb(3, 0, 70, 0.8);
-  width: 3.5rem;
-  height: 1.5rem;
+  width: 3.75rem;
+  height: 1.75rem;
+  margin: 0rem 0.75rem;
   border-radius: 0.75rem;
   text-align: center;
   align-self: center;
-  margin: 0rem 0.5rem;
+  /* margin: 0rem 0.5rem; */
   /* color: rgba(255, 255, 255, 0.75); */
 }
 h2.intro {
-  padding: 0rem 2rem;
+  padding: 0rem 0.25rem 0rem 0.75rem;
   font-size: 1rem;
 }
 
 h2.name {
   font-size: medium;
+  color: blue;
+  font-style: italic;
 }
 
 main {
@@ -67,19 +71,20 @@ main {
   flex-wrap: wrap;
   justify-content: space-evenly;
   height: 100%;
+  padding: 0rem 0rem 2.5rem 0rem;
 }
 h3 {
-  text-decoration: underline;
+  font-style: italic;
 }
 section {
-  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.3);
   width: auto;
   height: 100%;
   min-width: 15rem;
   min-height: 15rem;
   border: dashed #000000;
   border-radius: 0.3rem;
-  margin: 1rem 0rem;
+  margin: 1rem 0.5rem;
 
   display: flex;
   flex-direction: column;
@@ -90,7 +95,7 @@ section {
 fieldset {
   display: flex;
   border: none;
-  width: 100%;
+  width: fit-content;
   justify-content: center;
 }
 
@@ -99,8 +104,7 @@ fieldset input {
 }
 
 fieldset button {
-  margin: 0 0.35rem;
-  padding: 0.25rem;
+  margin: 0rem 0.75rem;
   border-radius: 0.75rem;
 }
 
@@ -114,13 +118,23 @@ fieldset button.paper {
   color: rgb(213, 0, 0);
   width: 4rem;
   height: 3rem;
+  margin: 0rem 0.75rem;
 }
+
 fieldset button.scissors {
   color: rgb(136, 0, 129);
   width: 4rem;
   height: 3rem;
+  margin: 0rem 0.75rem 0rem 0.75rem;
 }
+
 fieldset button.undo {
+  color: rgb(3, 0, 70, 0.8);
+  width: 4rem;
+  height: 2rem;
+}
+
+fieldset button.submit {
   color: rgb(3, 0, 70, 0.8);
   width: 4rem;
   height: 2rem;
@@ -164,3 +178,41 @@ header button {
     font-size: 1.5rem;
   }
 }
+/* @media all and (min-width: 650px) {
+  section {
+    width: 35%;
+  }
+  h2.intro {
+    padding: 0rem 2rem;
+    font-size: 1.5rem;
+  }
+
+  section button {
+    width: 4rem;
+    height: 2rem;
+    margin: 0rem 2rem;
+  }
+
+  h2.name {
+    font-size: 1.5rem;
+  }
+}
+@media all and (min-width: 650px) {
+  section {
+    width: 35%;
+  }
+  h2.intro {
+    padding: 0rem 2rem;
+    font-size: 1.5rem;
+  }
+
+  section button {
+    width: 4rem;
+    height: 2rem;
+    margin: 0rem 2rem;
+  }
+
+  h2.name {
+    font-size: 1.5rem;
+  }
+} */

@@ -22,8 +22,43 @@ How to get started:
 - Start by placing all the HTML elements on the page
 <!-- DONE -->
 - Style the user interface
-
+<!-- DONE -->
 - In English (not code), write out ALL the steps the application needs to take => For example "When user one clicks on Rock, remember that user one chooses Rock"
+<!-- DONE -->
+
+Algorithm:
+(A) Render Page + Following Options
+==> (1) Player Select Hand
+=====> alter state,display result, (A -> i)
+========> (i) Other Player Select Hand
+===============> ~if reset, (2)
+===============> ~if undo, (ii)
+===============> ~if link, (4)
+===============> ~if enter name, (3)
+===============> ~o'w, Compare Hands,display result,reset ---------------> hands, (A)
+========> (ii) Undo Selection
+===============> clear selection,display result, (A -> i)
+==> (2) Reset Game
+=====> reset state,display result,and start from (A)
+==> (3) Enter a Name
+=====> alter state,display result,start from (A),advance
+-----> to (1) or (i)
+==> (4) Link to More Information
+=====> redirect to external link
+
+(Undo, reset, and other player are irrelevant in initial case if programmed so player selection doesn't matter)
+
+Function Below Will Check Input
+
+<!-- const rps = (p1, p2) => {
+  if (p1 === p2) {
+    return 'Draw!'
+  } else if ((p1 === 'scissors' && p2 ==='paper') || (p1 ==='rock' && p2 === 'scissors') || (p1 === 'paper' && p2 === 'rock')) {
+    return 'Player 1 won!'
+  } else {
+    return 'Player 2 won!'
+  }
+}; -->
 
 Explorer Mode:
 
