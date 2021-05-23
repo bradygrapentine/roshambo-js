@@ -262,30 +262,30 @@ function clickUndoPlayer2(event) {
   console.log(event)
 }
 
-// function clickSubmitPlayer1(event) {
-//   if (player1Choice !== '' && player2Choice !== '') {
-//     const winnerElement = document.querySelector('h2.name')
-//     let winnerName = winner.textContent
-//     if (player1Choice === player2Choice) {
-//       winnerName = 'Draw!'
-//     } else if (
-//       (player1Choice === 'Scissors' && player2Choice === 'Paper') ||
-//       (player1Choice === 'Rock' && player2Choice === 'Scissors') ||
-//       (player1Choice === 'Paper' && player2Choice === 'Rock')
-//     ) {
-//       const player1Name = document.querySelector('.player1 strong.name')
-//       winnerName = player1Name.target.value
-//     } else {
-//       const player2Name = document.querySelector('.player2 strong.name')
-//       winnerName = player2Name.target.value
-//     }
-//   } else {
-//     window.alert('Both players must select a hand before submitting')
-//     return
-//   }
-//   console.log(event.target.value)
-//   console.log(event)
-// }
+function clickSubmitPlayer(event) {
+  if (player1Choice !== '' && player2Choice !== '') {
+    const winnerElement = document.querySelector('h2.name')
+    let winnerName = winnerElement.textContent
+    if (player1Choice === player2Choice) {
+      winnerName = 'Draw!'
+    } else if (
+      (player1Choice === 'Scissors' && player2Choice === 'Paper') ||
+      (player1Choice === 'Rock' && player2Choice === 'Scissors') ||
+      (player1Choice === 'Paper' && player2Choice === 'Rock')
+    ) {
+      const player1Name = document.querySelector('.player1 strong.name')
+      winnerName = player1Name.value
+    } else {
+      const player2Name = document.querySelector('.player2 strong.name')
+      winnerName = player2Name.value
+    }
+  } else {
+    window.alert('Both players must select a hand before submitting')
+    return
+  }
+  console.log(event.target.value)
+  console.log(event)
+}
 
 // function clickSubmitPlayer2(event) {
 //   const playerName = document.querySelector('.player2 strong.name')
@@ -309,8 +309,8 @@ function clickResetScoreboard(event) {
   player2Choice = ''
   player1Selection.textContent = 'Nothing Selected'
   player2Selection.textContent = 'Nothing Selected'
-  player1Name.textContent = 'Team 1'
-  player2Name.textContent = 'Team 2'
+  player1Name.textContent = 'Player 1'
+  player2Name.textContent = 'Player 2'
   console.log(event)
 }
 
@@ -350,10 +350,10 @@ function main() {
     .addEventListener('click', clickUndoPlayer2)
   document
     .querySelector('.player1 button.submit')
-    .addEventListener('click', clickSubmitPlayer1)
+    .addEventListener('click', clickSubmitPlayer)
   document
     .querySelector('.player2 button.submit')
-    .addEventListener('click', clickSubmitPlayer2)
+    .addEventListener('click', clickSubmitPlayer)
 }
 
 document.addEventListener('DOMContentLoaded', main)
