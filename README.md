@@ -66,15 +66,27 @@ Part 1:
 NOTE: Complete part 1 before moving on to part 2
 
 - There should be three buttons for Player One: Rock, Paper, Scissors
+<!-- DONE -->
+
 - There should be three buttons for Player Two: Rock, Paper, Scissors
+<!-- DONE -->
+
 - Player One should be able to select their throw
+<!-- DONE -->
+
 - Player Two should be able to select their throw
+<!-- DONE -->
+
 - After both players make their selection, I should be told who won and the game should be over.
+<!-- DONE -->
 
 Part 2:
 
-- You have heard about Rock, Paper, Scissors, but have you tried Rock, Paper, Scissors, Lizard, Spock? Modify your game to allow the - extra options!
+- You have heard about Rock, Paper, Scissors, but have you tried Rock, Paper, Scissors, Lizard, Spock? Modify your game to allow the extra options!
+<!-- DONE -->
+
 - Have fun with the CSS by adding colors, animations, and effects to make the game more enjoyable
+<!-- DONE, except for animations -->
 
 Adventure Mode:
 

@@ -1,0 +1,194 @@
+:root {
+  font: 16px / 1 'Monospace';
+  color: rgb(3, 0, 70);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  background-color: #ced2df9c;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: sticky;
+  padding: 0.5rem;
+  top: 0;
+  margin: 0rem 0rem 1rem 0rem;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-bottom: 2px solid rgb(0, 0, 0);
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.3);
+}
+header h1 {
+  text-align: center;
+  padding: 1rem 0rem 0.8rem 0rem;
+  font-style: italic;
+}
+
+section.display {
+  width: 81%;
+  min-height: 5rem;
+  background-color: rgba(255, 255, 255, 0.75);
+  flex-direction: row;
+  justify-content: space-between;
+  /* padding: 0rem 2rem; */
+}
+
+section button {
+  color: rgb(3, 0, 70, 0.8);
+  width: 3.75rem;
+  height: 1.75rem;
+  margin: 0rem 0.75rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  align-self: center;
+  /* margin: 0rem 0.5rem; */
+  /* color: rgba(255, 255, 255, 0.75); */
+}
+h2.intro {
+  padding: 0rem 0.25rem 0rem 0.75rem;
+  font-size: 1rem;
+}
+
+h2.name {
+  font-size: medium;
+  color: blue;
+  font-style: italic;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  height: 100%;
+  padding: 0rem 0rem 2.5rem 0rem;
+}
+h3 {
+  font-style: italic;
+}
+section {
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.3);
+  width: auto;
+  height: 100%;
+  min-width: 15rem;
+  min-height: 15rem;
+  border: dashed #000000;
+  border-radius: 0.3rem;
+  margin: 1rem 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+fieldset {
+  display: flex;
+  border: none;
+  width: fit-content;
+  justify-content: center;
+}
+
+fieldset input {
+  padding: 0.5rem;
+}
+
+fieldset button {
+  margin: 0rem 0.75rem;
+  border-radius: 0.75rem;
+}
+
+fieldset button.rock {
+  color: rgb(0, 77, 0);
+  width: 3rem;
+  height: 2rem;
+  margin: 0rem 0.5rem;
+}
+
+fieldset button.paper {
+  color: rgb(213, 0, 0);
+  width: 3rem;
+  height: 2rem;
+  margin: 0rem 0.5rem;
+}
+
+fieldset button.scissors {
+  color: rgb(136, 0, 129);
+  width: 3rem;
+  height: 2rem;
+  margin: 0rem 0.5rem 0rem 0.5rem;
+}
+fieldset button.spock {
+  color: rgb(52, 0, 88);
+  width: 3rem;
+  height: 2rem;
+  margin: 0rem 0.5rem;
+}
+
+fieldset button.lizard {
+  color: orange;
+  width: 3rem;
+  height: 2rem;
+  margin: 0rem 0.5rem;
+}
+
+fieldset button.undo {
+  color: rgb(3, 0, 70, 0.8);
+  width: 4rem;
+  height: 2rem;
+}
+
+fieldset button.submit {
+  color: rgb(3, 0, 70, 0.8);
+  width: 4rem;
+  height: 2rem;
+}
+
+section {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+header a {
+  align-self: center;
+}
+
+header button {
+  text-decoration: none;
+  color: rgb(3, 0, 70, 0.8);
+  font-size: 0.65rem;
+  text-align: center;
+  align-self: center;
+  margin: 0.15rem;
+  padding: 0rem 0.15rem;
+  border-radius: 0.2rem;
+}
+
+@media all and (min-width: 650px) {
+  section {
+    width: 35%;
+  }
+  h2.intro {
+    padding: 0rem 2rem;
+    font-size: 1.5rem;
+  }
+
+  section button {
+    width: 4rem;
+    height: 2rem;
+    margin: 0rem 2rem;
+  }
+
+  h2.name {
+    font-size: 1.5rem;
+  }
+}
