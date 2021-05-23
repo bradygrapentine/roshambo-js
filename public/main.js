@@ -135,7 +135,6 @@
 
 let player1Choice = ''
 let player2Choice = ''
-let submissionCount = 0
 // let player1Name = 'Player 1'
 // let player2Name = 'Player 2'
 
@@ -185,7 +184,7 @@ function clickPaperPlayer1(event) {
 function clickPaperPlayer2(event) {
   let player2Selection = document.querySelector('.player2 h2.selection')
   if (player2Choice === '') {
-    player2Choice = 'paper'
+    player2Choice = 'Paper'
     player2Selection.textContent = 'Hand Selected'
     console.log(event.target.value)
     console.log(event)
@@ -250,6 +249,8 @@ function clickUndoPlayer1(event) {
   player1Choice = ''
   let playerSelection = document.querySelector('.player1 h2.selection')
   playerSelection.textContent = 'Nothing Selected'
+  // const winner = document.querySelector('h2.name')
+  // winner.textContent = ''
   console.log(event.target.value)
   console.log(event)
 }
@@ -258,6 +259,8 @@ function clickUndoPlayer2(event) {
   player2Choice = ''
   let playerSelection = document.querySelector('.player2 h2.selection')
   playerSelection.textContent = 'Nothing Selected'
+  // const winner = document.querySelector('h2.name')
+  // winner.textContent = ''
   console.log(event.target.value)
   console.log(event)
 }
@@ -265,19 +268,26 @@ function clickUndoPlayer2(event) {
 function clickSubmitPlayer(event) {
   if (player1Choice !== '' && player2Choice !== '') {
     const winnerElement = document.querySelector('h2.name')
-    let winnerName = winnerElement.textContent
     if (player1Choice === player2Choice) {
-      winnerName = 'Draw!'
+      winnerElement.textContent = 'Draw!'
     } else if (
       (player1Choice === 'Scissors' && player2Choice === 'Paper') ||
       (player1Choice === 'Rock' && player2Choice === 'Scissors') ||
       (player1Choice === 'Paper' && player2Choice === 'Rock')
     ) {
       const player1Name = document.querySelector('.player1 strong.name')
-      winnerName = player1Name.value
+      winnerElement.textContent = player1Name.textContent
+      const undoButton2 = document.querySelector('.player2 button.undo')
+      undoButton2.disabled = true
+      const undoButton1 = document.querySelector('.player1 button.undo')
+      undoButton1.disabled = true
     } else {
       const player2Name = document.querySelector('.player2 strong.name')
-      winnerName = player2Name.value
+      winnerElement.textContent = player2Name.textContent
+      const undoButton2 = document.querySelector('.player2 button.undo')
+      undoButton2.disabled = true
+      const undoButton1 = document.querySelector('.player1 button.undo')
+      undoButton1.disabled = true
     }
   } else {
     window.alert('Both players must select a hand before submitting')
@@ -298,20 +308,21 @@ function clickSubmitPlayer(event) {
 // }
 
 function clickResetScoreboard(event) {
-  const player1Name = document.querySelector('.player1 strong.name')
-  const player2Name = document.querySelector('.player2 strong.name')
   const player1Selection = document.querySelector('.player1 h2.selection')
   const player2Selection = document.querySelector('.player2 h2.selection')
-  const winner = document.querySelector('h2.intro')
+  const winner = document.querySelector('h2.name')
 
-  winner.textContent = 'The winner is...'
+  winner.textContent = ''
   player1Choice = ''
   player2Choice = ''
   player1Selection.textContent = 'Nothing Selected'
   player2Selection.textContent = 'Nothing Selected'
-  player1Name.textContent = 'Player 1'
-  player2Name.textContent = 'Player 2'
   console.log(event)
+
+  const undoButton2 = document.querySelector('.player2 button.undo')
+  undoButton2.disabled = false
+  const undoButton1 = document.querySelector('.player1 button.undo')
+  undoButton1.disabled = false
 }
 
 function main() {
@@ -341,7 +352,7 @@ function main() {
     .addEventListener('click', clickPaperPlayer2)
   document
     .querySelector('.player2 button.scissors')
-    .addEventListener('click', clickScissorsPlayer1)
+    .addEventListener('click', clickScissorsPlayer2)
   document
     .querySelector('.player1 button.undo')
     .addEventListener('click', clickUndoPlayer1)
