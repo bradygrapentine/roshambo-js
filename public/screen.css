@@ -283,6 +283,8 @@ h2.name {
   font-size: medium;
   color: blue;
   font-style: italic;
+  position: absolute;
+  right: 45%;
 }
 
 main {
@@ -413,5 +415,25 @@ header button {
 
   h2.name {
     font-size: 1.5rem;
+  }
+}
+
+@media all and (min-width: 975px) {
+  h2.name {
+    font-size: 1.5rem;
+    right: 46.25%;
+  }
+}
+
+@media all and (min-width: 1280px) {
+  h2.name {
+    font-size: 1.5rem;
+    right: 47%;
+  }
+}
+@media all and (min-width: 1440px) {
+  h2.name {
+    font-size: 1.5rem;
+    right: 47.25%;
   }
 }
